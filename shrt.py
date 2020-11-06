@@ -1,10 +1,13 @@
 """
 Url shortener script using bitly API
 """
+import argparse
 import requests
 
 # refactoring
-def shorten_link(username, password, token, url):    
+
+
+def shorten_link(username, password, token, url="https://www.thepythoncode.com/topic/using-apis-in-python"):
     # construct the request headers with authorization
     headers = {"Authorization": f"Bearer {access_token}"}
 
@@ -40,4 +43,7 @@ if __name__ == "__main__":
     # the URL you want to shorten
     url = "https://www.thepythoncode.com/topic/using-apis-in-python"
 
-    shorten_link(username, password, access_token, url)
+    parser = argparse.ArgumentParser(description='URL Shortener v1')
+    parser.add_argument('link', help='long url to be shortened')
+    args = parser.parse_args()
+    shorten_link(username, password, access_token, args.link)
