@@ -145,3 +145,6 @@ static
 
 # visual studio code
 .vscode
+
+# configs
+etc/
