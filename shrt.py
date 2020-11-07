@@ -5,8 +5,6 @@ import argparse
 import configparser
 import requests
 
-# refactoring
-
 
 def shorten_link(token, guid, url="https://www.thepythoncode.com/topic/using-apis-in-python"):
     # construct the request headers with authorization
@@ -30,9 +28,6 @@ if __name__ == "__main__":
     config = configparser.ConfigParser()
     config.read('etc/config.ini')
     
-    # account info (Temporary)
-    username = config.get('configuration', 'username')
-    password = config.get('configuration', 'password')
     access_token = config.get('configuration', 'access_token')
     guid = config.get('configuration', 'group_id')
     # the URL you want to shorten
